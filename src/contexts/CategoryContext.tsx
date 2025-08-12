@@ -124,6 +124,7 @@ export const CategoryProvider: React.FC<CategoryProviderProps> = ({ children }) 
   );
 };
 
+// eslint-disable-next-line react-refresh/only-export-components
 export const useCategories = (): CategoryContextType & { getParentCategorySlug: (childSlug: string) => string | undefined, getCategoryPathBySlug: (slug: string) => Category[] } => {
   const context = useContext(CategoryContext) as CategoryContextType & { getParentCategorySlug: (childSlug: string) => string | undefined, getCategoryPathBySlug: (slug: string) => Category[] };
   if (context === undefined) {
