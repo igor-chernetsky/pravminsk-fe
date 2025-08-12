@@ -1,0 +1,98 @@
+@import './colors.module.scss';
+
+.carouselWrapper {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 1rem;
+  @media (max-width: 1200px) {
+    max-width: 100%;
+  }
+  @media (max-width: 768px) {
+    max-width: none;
+    padding: 0 1rem;
+  }
+}
+
+.appContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background: $color-surface;
+}
+
+.footerWrapper {
+  width: 100%;
+  background: $color-text;
+}
+
+.footerContent {
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 2rem 1rem;
+}
+
+.mainLayout {
+  display: flex;
+  flex: 1;
+  gap: 1rem;
+  max-width: 1440px;
+  margin: 1rem auto;
+  width: 100%;
+  padding: 0 2rem;
+  
+  @media (max-width: 1200px) {
+    max-width: 100%;
+  }
+  @media (max-width: 768px) {
+    max-width: none;
+    padding: 0 1rem;
+  }
+}
+
+.mainContent {
+  flex: 1;
+  min-height: 600px;
+  color: $color-text;
+} 
+
+.sidebarWrapper {
+  max-width: 330px;
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.articleLayout {
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 2rem;
+}
+
+.articleMainContent {
+  width: 100%;
+}
+
+@media (max-width: 1200px) {
+  .articleLayout {
+    max-width: 1200px;
+    padding: 0 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .articleLayout {
+    max-width: none;
+    padding: 0 0.5rem;
+  }
+} 

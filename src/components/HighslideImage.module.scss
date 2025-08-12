@@ -1,0 +1,135 @@
+// Global styles for highslide functionality
+:global(.highslide),
+:global([class*="highslide"]) {
+  text-decoration: none !important;
+  cursor: pointer !important;
+  
+  &:hover {
+    opacity: 0.9 !important;
+    text-decoration: none !important;
+  }
+  
+  img {
+    border-radius: 4px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: transform 0.2s ease !important;
+    display: inline-block !important;
+    margin-right: 1rem;
+    margin-bottom: 0;
+    margin-top: 0.5rem;
+    float: left;
+    
+    &:hover {
+      transform: scale(1.05) !important;
+    }
+  }
+}
+
+.highslideLink {
+  text-decoration: none;
+  cursor: pointer;
+  vertical-align: middle;
+  
+  &:hover {
+    opacity: 0.9;
+  }
+}
+
+.highslideImage {
+  max-width: 350px;
+  max-height: 300px;
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  float: left;
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 2rem;
+}
+
+.modalContent {
+  position: relative;
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modalImage {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.closeButton {
+  position: absolute;
+  top: -40px;
+  right: 0;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  :global(.highslide),
+  :global([class*="highslide"]) {
+    img {
+      max-width: 150px !important;
+      max-height: 100px !important;
+    }
+  }
+  
+  .highslideImage {
+    max-width: 150px;
+    max-height: 100px;
+  }
+  
+  .modalOverlay {
+    padding: 1rem;
+  }
+  
+  .closeButton {
+    top: -35px;
+    right: 0;
+    font-size: 1.5rem;
+    width: 35px;
+    height: 35px;
+  }
+} 

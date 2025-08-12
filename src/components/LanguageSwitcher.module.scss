@@ -1,0 +1,32 @@
+@import '../colors.module.scss';
+
+.languageSwitcher {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  margin-left: auto;
+}
+
+.languageSwitcher button {
+  background: none;
+  border: none;
+  color: $color-link;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 0.2rem 0.7rem;
+  border-radius: 4px;
+  transition: background 0.2s, color 0.2s;
+  outline: none;
+  &.activeLang {
+    background: #7a3a13;
+    color: #fff !important;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  }
+}
+
+.langDivider {
+  color: $color-border;
+  font-size: 1.1rem;
+  padding: 0 0.2rem;
+} 

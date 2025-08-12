@@ -1,0 +1,18 @@
+@import '../colors.module.scss';
+
+.sidebar {
+  max-width: 100%;
+  color: $color-text-light;
+  
+  // Add spacing between CmsSidebar and CategoryTree
+  > * + * {
+    margin-top: 1rem;
+  }
+
+  .sidebarBlock {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(90, 90, 90, 0.04);
+    padding: 1rem;
+    border-radius: 12px;
+  }
+} 

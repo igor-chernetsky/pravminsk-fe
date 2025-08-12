@@ -1,0 +1,52 @@
+@import '../colors.module.scss';
+
+.socialLinksSection {
+  padding: 1.2rem 1rem 1.5rem 1rem;
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(90, 90, 90, 0.04);
+  text-align: center;
+}
+
+.socialLinksTitle {
+  font-size: 1rem;
+  color: $color-primary;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.socialLinksRow {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+  flex-wrap: wrap;
+}
+
+.socialLinkIcon {
+  font-size: 2rem;
+  color: $color-link;
+  transition: color 0.2s;
+  text-decoration: none;
+  &:hover {
+    color: $color-link-hover;
+  }
+}
+
+.socialIconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: #e5e5e5;
+  margin: 0 auto;
+}
+
+.socialIconImg {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+} 

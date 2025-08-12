@@ -1,0 +1,36 @@
+@import '../colors.module.scss';
+
+.homePage {
+  // Container for home page
+}
+
+
+
+.pageTitle {
+  color: $color-text;
+  margin-bottom: 2rem;
+}
+
+.homeSidebarBlocks {
+  margin: 2rem auto 0 auto;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.archiveBlock {
+  background: $color-surface;
+  border: 1px solid $color-border;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(90, 90, 90, 0.04);
+  padding: 1.5rem 1rem;
+}
+
+.archiveTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: $color-primary;
+  margin-bottom: 1rem;
+  text-align: center;
+} 

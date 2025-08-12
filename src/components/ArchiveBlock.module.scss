@@ -1,0 +1,28 @@
+@import '../colors.module.scss';
+
+.archiveBlock {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(90, 90, 90, 0.04);
+  padding: 1.5rem 1rem;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.archiveTitle {
+  color: $color-text;
+  font-size: 18px;
+  font-weight: 400;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.divider {
+  height: 2px;
+  background: linear-gradient(to right, $color-primary, transparent);
+  width: 100%;
+} 

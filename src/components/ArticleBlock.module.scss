@@ -1,0 +1,46 @@
+@import '../colors.module.scss';
+
+.articleBlock {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.04);
+  padding: 1rem;
+  align-items: flex-start;
+}
+
+.articleImage {
+  width: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  background: #eee;
+  flex-shrink: 0; // Prevent image from shrinking
+}
+
+.articleContent {
+  flex: 1;
+  text-align: left;
+}
+
+.articleTitle {
+  margin: 0;
+  color: $color-text;
+  font-weight: 400;
+  font-size: 1.3rem;
+  text-align: left;
+}
+
+.articleDate {
+  color: $color-text-light;
+  font-size: 0.95rem;
+  margin: 0.2rem 0 0.7rem 0;
+  text-align: left;
+}
+
+.articleDescription {
+  color: #5A5A5A;
+  font-size: 1rem;
+  text-align: left;
+} 

@@ -1,0 +1,95 @@
+@import '../colors.module.scss';
+
+.patriarhPanel {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 2px 8px rgba(90, 90, 90, 0.04);
+}
+
+.title {
+  color: #232225;
+  font-size: 18px;
+  line-height: 24px;
+  font-weight: 400;
+  margin: 0 0 1rem 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin: 0;
+}
+
+.description {
+  color: #232225;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.divider {
+  height: 2px;
+  background: linear-gradient(to right, $color-primary, transparent);
+  width: 100%;
+}
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #333;
+  text-decoration: none;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+  
+  &:hover {
+    background-color: #f5f5f5;
+    text-decoration: none;
+    color: #333;
+  }
+}
+
+.icon {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .patriarhPanel {
+    padding: 1rem;
+  }
+  
+  .title {
+    font-size: 1.1rem;
+  }
+  
+  .image {
+    max-width: 150px;
+    max-height: 225px;
+  }
+  
+  .description {
+    font-size: 0.9rem;
+  }
+}

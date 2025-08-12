@@ -1,0 +1,42 @@
+@import '../colors.module.scss';
+
+.headerSocialLinks {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.socialLinkIcon {
+  font-size: 1rem;
+  color: $color-link;
+  transition: color 0.2s;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  
+  &:hover {
+    color: $color-link-hover;
+  }
+}
+
+.socialIconCircle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: #e5e5e5;
+  transition: background-color 0.2s;
+  
+  &:hover {
+    background: #d0d0d0;
+  }
+}
+
+.socialIconImg {
+  width: 14px;
+  height: 14px;
+  object-fit: contain;
+  display: block;
+} 
