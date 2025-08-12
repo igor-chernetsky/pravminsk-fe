@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import CategoryNav from './CategoryNav';
 import styles from './Header.module.scss';
-import LanguageSwitcher from './LanguageSwitcher';
 import HeaderSocialLinks from './HeaderSocialLinks';
 import Logo from './Logo';
 

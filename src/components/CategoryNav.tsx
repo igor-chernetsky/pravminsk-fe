@@ -16,11 +16,9 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onCategoryClick }) => {
   const { categories } = useCategories();
   const location = useLocation();
   const { language } = useLanguage();
-  const { t } = useTranslation();
   const langPrefix = language === 'BY' ? '/by' : '';
 
   // Determine if we're on an article or category page
-  const articleMatch = matchPath('/article/:slug', location.pathname);
   const categoryMatch = matchPath('/category/:slug', location.pathname);
 
   // Use global variable for highlight if set by ArticlePage
