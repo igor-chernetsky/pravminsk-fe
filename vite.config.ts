@@ -1,13 +1,17 @@
-import react from '@vitejs/plugin-react';
-import { defineConfig, loadEnv } from 'vite';
+import react from "@vitejs/plugin-react";
+import { defineConfig, loadEnv } from "vite";
 
 export default defineConfig(({ mode }) => {
-  const env = loadEnv(mode, process.cwd(), '')
   return {
     plugins: [react()],
     preview: {
-      port: parseInt(env.PORT) || 3000,
-      host: '0.0.0.0'
-    }
-  }
+      host: '0.0.0.0',
+      port: process.env.PORT ? parseInt(process.env.PORT) : 3000,
+      strictPort: true,
+      allowedHosts: [
+        "pravminsk-fe.onrender.com", // Your Render domain
+        "localhost", // For local development
+      ],
+    },
+  };
 });
