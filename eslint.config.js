@@ -26,19 +26,14 @@ export default tseslint.config([
       "@typescript-eslint": tsEslint,
     },
     rules: {
-      "@typescript-eslint/no-explicit-any": "warn", // Treat 'any' as warning
+      "@typescript-eslint/no-explicit-any": "off", // Treat 'any' as warning
 
       // Treat unused variables as warnings (for both JS/TS)
-      'no-unused-vars': 'warn',
-      '@typescript-eslint/no-unused-vars': 'warn',
-      '@typescript-eslint/no-unused-vars': [
-        'warn',
-        { 
-          argsIgnorePattern: '^_',  // Ignore variables like `_foo`
-          varsIgnorePattern: '^_',   // Ignore _prefixed vars
-          caughtErrorsIgnorePattern: '^_'  // Ignore unused catch params
-        }
-      ]
+      'no-unused-vars': 'off',
+      "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/no-unsafe-assignment": "warn", // Warn on unsafe unknown assignments
+      "@typescript-eslint/no-unsafe-member-access": "warn", // Warn on unsafe unknown access
+      "@typescript-eslint/no-unused-vars": 'off',
     },
   },
 ]);

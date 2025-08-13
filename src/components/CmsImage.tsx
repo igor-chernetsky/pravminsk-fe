@@ -5,7 +5,7 @@ import { getImageUrl } from '../utils/imageUtils';
 
 interface CmsImageProps {
   image?: CmsImageType | null;
-  variant?: 'category' | 'article';
+  variant?: 'category' | 'article' | 'thumbnail';
   className?: string;
   height?: string;
 }

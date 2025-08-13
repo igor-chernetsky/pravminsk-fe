@@ -3,10 +3,10 @@ import type { CmsImage as CmsImageType } from '../types/Image';
 /**
  * Get the appropriate image URL based on variant and available formats
  * @param image - The CMS image object
- * @param variant - The image variant ('category' | 'article')
+ * @param variant - The image variant ('category' | 'article' | 'thumbnail')
  * @returns The complete image URL
  */
-export const getImageUrl = (image: CmsImageType, variant: 'category' | 'article' = 'article'): string => {
+export const getImageUrl = (image: CmsImageType, variant: 'category' | 'article' | 'thumbnail' = 'article'): string => {
   const cmsUrl = import.meta.env.VITE_CMS_URL;
   
   if (variant === 'category') {

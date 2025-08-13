@@ -26,7 +26,7 @@ export const markdownComponents = {
       if (childrenArray.length === 1) {
         const child = childrenArray[0];
         if (React.isValidElement(child)) {
-          const imgProps = child.props;
+          const imgProps: any = child.props;
           return (
             <HighslideImage
               src={imgProps.src || href || ''}
