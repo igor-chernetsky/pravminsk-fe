@@ -1,10 +1,12 @@
+@import '../colors.module.scss';
+
 .scrollToTopButton {
   padding: 0;
   position: fixed;
   right: 2rem;
   bottom: 2rem;
   z-index: 1000;
-  background: #7a3a13;
+  background: $color-primary;
   color: #fff;
   border: none;
   border-radius: 50%;
@@ -17,7 +19,7 @@
   opacity: 0.6;
 
   &:hover {
-    background: #8a4a23;
+    background: $color-primary;
     opacity: 1;
   }
 } 

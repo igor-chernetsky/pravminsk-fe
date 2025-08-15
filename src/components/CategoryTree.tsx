@@ -47,7 +47,7 @@ const CategoryTree: React.FC<CategoryTreeProps> = ({ selectedCategorySlug }) => 
       displayCategory = findFirstLevelParent(selectedCategorySlug);
     }
   }
-  
+
   // Fallback to first category if no display category found
   if (!displayCategory) {
     displayCategory = categories[0];
@@ -65,6 +65,9 @@ const CategoryTree: React.FC<CategoryTreeProps> = ({ selectedCategorySlug }) => 
 
   const getCategoryLink = (category: Category) => {
     // If category has content, link to the article instead of category page
+    if (category.link) {
+      return category.link;
+    }
     if (category.content) {
       return `/article/${category.content.slug}`;
     }
