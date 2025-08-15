@@ -58,6 +58,9 @@ const CategoryNav: React.FC<CategoryNavProps> = ({ onCategoryClick }) => {
 
   const getCategoryLink = (category: any) => {
     // If category has content, link to the article instead of category page
+    if (category.link) {
+      return category.link;
+    }
     if (category.content) {
       return `${langPrefix}/article/${category.content.slug}`;
     }

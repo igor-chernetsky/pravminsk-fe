@@ -6,6 +6,7 @@ export interface Category {
   slug: string;
   image?: CmsImage;
   child?: Category[];
+  link?: string;
   content?: {
     id: number;
     title: string;

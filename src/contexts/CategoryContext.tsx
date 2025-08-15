@@ -42,6 +42,7 @@ export const CategoryProvider: React.FC<CategoryProviderProps> = ({ children }) 
           description: contentAttr.description || contentAttr.attributes?.description,
           imageUrl: contentAttr.imageUrl || contentAttr.attributes?.imageUrl,
           publishedAt: contentAttr.publishedAt || contentAttr.attributes?.publishedAt,
+          link: contentAttr.link || contentAttr.attributes?.link
         } : undefined;
         return {
           id: item.id,
@@ -49,6 +50,7 @@ export const CategoryProvider: React.FC<CategoryProviderProps> = ({ children }) 
           slug: attr.slug || item.slug,
           image: attr.image?.data?.attributes || item.image,
           content,
+          link: attr.link || item.link,
           child: (attr.child || item.child || []).map(mapCategory),
         };
       }
