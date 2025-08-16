@@ -92,7 +92,7 @@ const AppContent: React.FC = () => {
       {/* Main content area - Constrained width */}
       <div className={styles.appContainer}>
         {/* Carousel Panel - Full width, only on HomePage */}
-        {isHomePage && (
+        {isHomePage && panels?.length && (
           <div className={styles.carouselWrapper}>
             <CarouselPanel panels={panels} />
           </div>
