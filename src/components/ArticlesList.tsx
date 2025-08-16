@@ -60,7 +60,6 @@ const ArticlesList: React.FC<ArticlesListProps> = ({ categorySlug, search, date 
     setError(null);
     setCurrentPage(1);
     setHasMore(true);
-    console.log('init load');
     loadArticles(1, false).finally(() => setLoading(false));
   }, []); // Empty dependency array - run only once on mount
 
@@ -86,7 +85,6 @@ const ArticlesList: React.FC<ArticlesListProps> = ({ categorySlug, search, date 
     setError(null);
     setCurrentPage(1);
     setHasMore(true);
-    console.log('props load');
     loadArticles(1, false).finally(() => setLoading(false));
   }, [categorySlug, search, date]); // Re-run when these props change
 

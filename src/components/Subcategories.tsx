@@ -18,6 +18,17 @@ const Subcategories: React.FC<SubcategoriesProps> = ({ subcategories, categoryNa
     return null;
   }
 
+  const getCategoryLink = (category: any) => {
+    // If category has content, link to the article instead of category page
+    if (category.link) {
+      return category.link;
+    }
+    if (category.content) {
+      return `${langPrefix}/article/${category.content.slug}`;
+    }
+    return `${langPrefix}/category/${category.slug}`;
+  };
+
   const toggleExpanded = (itemId: string) => {
     const newExpanded = new Set(expandedItems);
     if (newExpanded.has(itemId)) {
@@ -38,7 +49,7 @@ const Subcategories: React.FC<SubcategoriesProps> = ({ subcategories, categoryNa
         {subcategories.map(sub => (
           <li key={sub.id} className={styles.subcategoryItem}>
             <div className={styles.subcategoryHeader}>
-              <Link to={`${langPrefix}/category/${sub.slug}`}>{sub.name}</Link>
+              <Link to={getCategoryLink(sub)}>{sub.name}</Link>
               {sub.child && sub.child.length > 0 && (
                 <button
                   className={`${styles.expandButton} ${expandedItems.has(sub.id) ? styles.expanded : ''}`}
@@ -55,7 +66,7 @@ const Subcategories: React.FC<SubcategoriesProps> = ({ subcategories, categoryNa
               <ul className={`${styles.subcategoryList} ${expandedItems.has(sub.id) ? styles.expanded : ''}`}>
                 {sub.child.map((grandChild: any) => (
                   <li key={grandChild.id} className={styles.subcategorySubItem}>
-                    <Link to={`${langPrefix}/category/${grandChild.slug}`}>
+                    <Link to={getCategoryLink(grandChild)}>
                       • {grandChild.name}
                     </Link>
                   </li>
