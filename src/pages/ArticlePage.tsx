@@ -1,6 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { useParams, Link } from 'react-router-dom';
-import CmsImage from '../components/CmsImage';
+import { useParams } from 'react-router-dom';
 import styles from './ArticlePage.module.scss';
 import { useCategories } from '../contexts/CategoryContext';
 import ReactMarkdown from 'react-markdown';
@@ -11,21 +10,13 @@ import RelatedArticles from '../components/RelatedArticles';
 import Subcategories from '../components/Subcategories';
 import PhotoGallery from '../components/PhotoGallery';
 import ArticlePanel from '../components/ArticlePanel';
+import HeroSection from '../components/HeroSection';
 import { getArticleBySlug, getArticles } from '../services/strapiService';
 import { useRunOnceWithDeps } from '../hooks/useRunOnce';
-import headerImage from '../assets/img/heder.png';
 import { markdownComponents } from '../components/MarkdownComponents';
 import '../components/HighslideImage.module.scss';
 
-const formatDate = (dateStr: string) => {
-  if (!dateStr) return '';
-  const date = new Date(dateStr);
-  return date.toLocaleDateString('ru-RU', {
-    day: '2-digit',
-    month: 'long',
-    year: 'numeric',
-  });
-};
+
 
 const ArticlePage: React.FC = () => {
   const { slug: routeSlug } = useParams<{ slug?: string }>();
@@ -102,39 +93,15 @@ const ArticlePage: React.FC = () => {
 
   return (
     <>
-      <div className={styles.fullWidthHeader}>
-        <div className={`${styles.heroSection} ${article.cover ? styles.heroCover : ''}`}>
-          {article.cover ? (
-            <CmsImage image={article.cover} variant="category" className={styles.coverImage} height="100%" />
-          ) : (
-            <img
-              src={headerImage}
-              alt="Default header image"
-              className={`${styles.cmsImage} ${styles.categoryImage} ${styles.coverImage}`}
-            />
-          )}
-          <div className={styles.heroOverlay}>
-            <div className={styles.heroContent}>
-              <h1 className={styles.title} style={isKontaktyPage ? { marginBottom: 0 } : {}}>{article.title}</h1>
-              {!isKontaktyPage && (article.createdAt || article.publishedAt) && (
-                <div className={styles.date}>{formatDate(article.createdAt || article.publishedAt)}</div>
-              )}
-            </div>
-          </div>
-        </div>
-        {breadcrumbs.length > 0 && (
-          <nav className={styles.breadcrumbs} aria-label="Breadcrumb">
-            {breadcrumbs.map((crumb, idx) => (
-              <span key={crumb.slug}>
-                <Link to={`${langPrefix}/category/${crumb.slug}`}>{crumb.name}</Link>
-                {idx < breadcrumbs.length - 1 && <span className={styles.breadcrumbSep}> / </span>}
-              </span>
-            ))}
-            <span className={styles.breadcrumbSep}> / </span>
-            <span className={styles.breadcrumbCurrent}>{article.title}</span>
-          </nav>
-        )}
-      </div>
+      <HeroSection
+        title={article.title}
+        date={isKontaktyPage ? undefined : (article.createdAt || article.publishedAt)}
+        cover={article.cover}
+        breadcrumbs={breadcrumbs}
+        currentPageTitle={article.title}
+        langPrefix={langPrefix}
+        showDate={!isKontaktyPage}
+      />
       <div className={styles.detailsRow}>
         <div className={styles.articlePage}>
           {Array.isArray(article.blocks) && article.blocks.length > 0 && (

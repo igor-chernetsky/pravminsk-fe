@@ -8,6 +8,7 @@ import CarouselPanel from './components/CarouselPanel';
 import HomePage from './pages/HomePage';
 import CategoryPage from './pages/CategoryPage';
 import DateSearchPage from './pages/DateSearchPage';
+import MapPage from './pages/MapPage';
 import SearchResults from './components/SearchResults';
 import { CategoryProvider, useCategories } from './contexts/CategoryContext';
 import type { Article } from './types/Article';
@@ -97,11 +98,13 @@ const AppContent: React.FC = () => {
             <CarouselPanel panels={panels} />
           </div>
         )}
-        {isArticlePage ? (
+        {isArticlePage || location.pathname === `${langPrefix}/karta` || location.pathname === '/karta' ? (
           <div className={styles.articleLayout}>
             <main className={styles.articleMainContent}>
               <Routes>
                 <Route path={`${langPrefix}/article/:slug`} element={<ArticlePage />} />
+                <Route path={`${langPrefix}/karta`} element={<MapPage />} />
+                <Route path="/karta" element={<MapPage />} />
               </Routes>
             </main>
           </div>

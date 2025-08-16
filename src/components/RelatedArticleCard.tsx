@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styles from './RelatedArticleCard.module.scss';
 import { useLanguage } from '../contexts/LanguageContext';
 import { getArticleImageUrl } from '../utils/imageUtils';
+import headerImage from '../assets/img/heder.png';
 
 interface RelatedArticleCardProps {
   article: any;
@@ -12,21 +13,17 @@ interface RelatedArticleCardProps {
 const RelatedArticleCard: React.FC<RelatedArticleCardProps> = ({ article, className = '' }) => {
   const { language } = useLanguage();
   const langPrefix = language === 'BY' ? '/by' : '';
+  const [imageError, setImageError] = React.useState(false);
 
   return (
     <Link to={`${langPrefix}/article/${article.slug}`} className={`${styles.card} ${className}`}>
       <div className={styles.imageContainer}>
-        {article.imageUrl ? (
-          <img
-            src={getArticleImageUrl(article.imageUrl)}
-            alt={article.title}
-            className={styles.image}
-          />
-        ) : (
-          <div className={styles.placeholderImage}>
-            <span>No Image</span>
-          </div>
-        )}
+        <img
+          src={article.imageUrl && !imageError ? getArticleImageUrl(article.imageUrl) : headerImage}
+          alt={article.title}
+          className={styles.image}
+          onError={() => setImageError(true)}
+        />
       </div>
       <div className={styles.content}>
         <h3 className={styles.title}>{article.title}</h3>
