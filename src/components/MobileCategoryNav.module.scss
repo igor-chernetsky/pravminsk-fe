@@ -1,0 +1,97 @@
+@import '../colors.module.scss';
+
+.mobileCategoryNav {
+  width: 100%;
+}
+
+.mobileNavList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.mobileNavItem {
+  width: 100%;
+  border-bottom: 1px solid $color-border-light;
+  
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.mobileNavHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background: white;
+}
+
+.mobileNavLink {
+  color: $color-text;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: 500;
+  flex: 1;
+  
+  &:hover {
+    color: $color-primary;
+  }
+}
+
+.expandButton {
+  background: none;
+  border: none;
+  color: $color-text;
+  cursor: pointer;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+  
+  &.expanded {
+    transform: rotate(180deg);
+  }
+  
+  &:hover {
+    opacity: 0.8;
+  }
+}
+
+.mobileNavChildren {
+  background: $color-secondary;
+  border-top: 1px solid $color-border-light;
+}
+
+.level1 {
+  .mobileNavItem {
+    border-bottom: 1px solid $color-border-light;
+  }
+  
+  .mobileNavHeader {
+    padding: 0.5rem 1rem 0.5rem 2rem;
+    background: $color-secondary;
+  }
+  
+  .mobileNavLink {
+    font-size: 0.95rem;
+  }
+}
+
+.level2 {
+  .mobileNavItem {
+    border-bottom: 1px solid $color-border-light;
+  }
+  
+  .mobileNavHeader {
+    padding: 0.4rem 1rem 0.4rem 3rem;
+    background: $color-secondary;
+  }
+  
+  .mobileNavLink {
+    font-size: 0.9rem;
+  }
+}
