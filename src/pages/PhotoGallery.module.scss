@@ -1,0 +1,57 @@
+@import '../colors.module.scss';
+
+.photoGalleryPage {
+  // Container for photo gallery page
+  padding: 2rem 0;
+}
+
+.loading {
+  text-align: center;
+  padding: 2rem;
+  color: #5A5A5A;
+  font-size: 18px;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  padding: 2rem;
+  font-size: 16px;
+}
+
+.articlesList {
+  // Container for the list of articles
+  margin-bottom: 2rem;
+}
+
+.loadMoreContainer {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.loadMoreButton {
+  background-color: $color-primary;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover:not(:disabled) {
+    background-color: #0056b3;
+  }
+
+  &:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+  }
+}
+
+// Responsive design
+@media (max-width: 768px) {
+  .photoGalleryPage {
+    padding: 1rem 0;
+  }
+}

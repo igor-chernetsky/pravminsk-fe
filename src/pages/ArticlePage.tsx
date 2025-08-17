@@ -50,6 +50,11 @@ const ArticlePage: React.FC = () => {
     }
   }, [slug, locale]);
 
+  // Scroll to top when article page loads
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [slug]);
+
   useEffect(() => {
     if (article && article.categories?.length > 0) {
       const firstCategory = article.categories[0];

@@ -9,6 +9,7 @@ import HomePage from './pages/HomePage';
 import CategoryPage from './pages/CategoryPage';
 import DateSearchPage from './pages/DateSearchPage';
 import MapPage from './pages/MapPage';
+import PhotoGallery from './pages/PhotoGallery';
 import SearchResults from './components/SearchResults';
 import { CategoryProvider, useCategories } from './contexts/CategoryContext';
 import type { Article } from './types/Article';
@@ -98,13 +99,14 @@ const AppContent: React.FC = () => {
             <CarouselPanel panels={panels} />
           </div>
         )}
-        {isArticlePage || location.pathname === `${langPrefix}/karta` || location.pathname === '/karta' ? (
+        {isArticlePage || location.pathname === `${langPrefix}/karta` || location.pathname === '/karta' || location.pathname === `${langPrefix}/photogallery` || location.pathname === '/photogallery' ? (
           <div className={styles.articleLayout}>
             <main className={styles.articleMainContent}>
               <Routes>
                 <Route path={`${langPrefix}/article/:slug`} element={<ArticlePage />} />
                 <Route path={`${langPrefix}/karta`} element={<MapPage />} />
                 <Route path="/karta" element={<MapPage />} />
+                <Route path={`${langPrefix}/photogallery`} element={<PhotoGallery />} />
               </Routes>
             </main>
           </div>
@@ -118,8 +120,10 @@ const AppContent: React.FC = () => {
                 <Routes>
                   <Route path={`${langPrefix}/search/date/:date`} element={<DateSearchPage />} />
                   <Route path={`${langPrefix}/category/:slug`} element={<CategoryPage />} />
+                  <Route path={`${langPrefix}/photogallery`} element={<PhotoGallery />} />
                   <Route path={`${langPrefix}/article/:slug`} element={<ArticlePage />} />
                   <Route path={`${langPrefix}/kontakty`} element={<ArticlePage key="kontakty" />} />
+                  <Route path={`${langPrefix}/photogallery`} element={<PhotoGallery />} />
                   <Route path={`${langPrefix}/`} element={<HomePage />} />
                 </Routes>
               )}

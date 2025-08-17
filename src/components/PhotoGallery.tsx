@@ -102,16 +102,6 @@ const PhotoGallery: React.FC<PhotoGalleryProps> = ({ photos }) => {
     setSelectedPhoto(photos[nextIndex]);
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      handleClosePopup();
-    } else if (e.key === 'ArrowLeft') {
-      handlePreviousPhoto();
-    } else if (e.key === 'ArrowRight') {
-      handleNextPhoto();
-    }
-  };
-
   const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
     const img = e.target as HTMLImageElement;
     const originalPath = img.dataset.originalPath;

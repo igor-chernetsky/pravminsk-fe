@@ -52,7 +52,7 @@ const PhotoReports: React.FC = () => {
     <div className={styles.photoReports}>
       <div className={styles.columnHeader}>
         <h3 className={styles.columnTitle}>Фоторепортажи</h3>
-        <Link to={`${langPrefix}/category/fotoreportazhi`} className={styles.viewAllLink}>
+        <Link to={`${langPrefix}/photogallery`} className={styles.viewAllLink}>
           Смотреть все
           <span className={styles.arrow}>→</span>
         </Link>
