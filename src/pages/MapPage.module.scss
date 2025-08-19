@@ -48,8 +48,20 @@
 
 // Responsive design
 @media (max-width: 768px) {
+  .mapPage {
+    flex-direction: column;
+    gap: 0.5rem;
+    margin: 0 auto 1rem;
+  }
+  
   .mapContainer {
-    padding: 0 15px;
+    padding: 1rem;
+    width: calc(100% - 2rem);
+    max-width: 100%;
+  }
+  
+  .sidebarWrapper {
+    display: none; // Hide sidebar on mobile
   }
   
   .pageTitle {

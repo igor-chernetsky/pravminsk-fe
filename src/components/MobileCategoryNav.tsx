@@ -71,3 +71,4 @@ const MobileCategoryNav: React.FC<MobileCategoryNavProps> = ({
 };
 
 export default MobileCategoryNav;
+

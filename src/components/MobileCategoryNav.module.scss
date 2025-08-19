@@ -24,7 +24,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: calc(100% - 2rem);
   padding: 0.75rem 1rem;
   background: white;
 }
@@ -95,3 +95,4 @@
     font-size: 0.9rem;
   }
 }
+
