@@ -33,7 +33,7 @@ const ArticleBlock: React.FC<ArticleBlockProps> = ({ article }) => {
       />
       <div className={styles.articleContent}>
         <h3 className={styles.articleTitle}>{article.title}</h3>
-        <div className={styles.articleDate}>{formatDate(article.publishedAt)}</div>
+        <div className={styles.articleDate}>{formatDate(article.createdAt || article.publishedAt)}</div>
         <div className={styles.articleDescription}>
           <ReactMarkdown
             rehypePlugins={[rehypeRaw]}

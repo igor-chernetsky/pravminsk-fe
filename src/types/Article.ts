@@ -5,6 +5,7 @@ export interface Article {
   description: string;
   imageUrl?: string;
   publishedAt: string;
+  createdAt: string;
   panel?: {
     id: number;
     documentId: string;
