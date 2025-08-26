@@ -203,7 +203,7 @@ const MapPage: React.FC = () => {
       }
 
       script = document.createElement('script');
-      script.src = 'https://maps.googleapis.com/maps/api/js?key=AIzaSyBznP1syKaF8xPq5Cf1eIf3D5t5ikW20Bg&sensor=false';
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${import.meta.env.VITE_GOOGLE_MAP_KEY}&sensor=false`;
       script.async = true;
       script.defer = true;
 

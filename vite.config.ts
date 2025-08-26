@@ -15,5 +15,5 @@ export default defineConfig({
       "pravminsk-fe.onrender.com", // Your Render domain
       "localhost", // For local development
     ],
-  },
+  }
 });
