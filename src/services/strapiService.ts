@@ -52,7 +52,7 @@ export async function getSocials(locale: string) {
 }
 
 export async function getArticlesWithPhotos({ locale, page = 1, pageSize = 6 }: { locale: string; page?: number; pageSize?: number }) {
-  const url = `${cmsUrl}/api/articles?filters[old_photos][$notNull]=true&populate[old_photos]=true&pagination[page]=${page}&pagination[pageSize]=${pageSize}&locale=${locale}`;
+  const url = `${cmsUrl}/api/articles/with-photos?pagination[page]=${page}&pagination[pageSize]=${pageSize}&min=5&locale=${locale}`;
   const res = await fetch(url);
   if (!res.ok) throw new Error(`Strapi error: ${res.status} ${res.statusText}`);
   return res.json();

@@ -48,7 +48,7 @@ const AppContent: React.FC = () => {
         slug: item.slug || item.attributes?.slug,
         description: item.description || item.attributes?.description,
         imageUrl: item.imageUrl || item.attributes?.imageUrl,
-        publishedAt: item.publishedAt || item.attributes?.publishedAt,
+        publishedAt: item.publishedAt || item.attributes?.publishedAt || item.createdAt || item.attributes?.createdAt,
       })) : []);
     } catch (e: any) {
       setSearchError(e.message);
